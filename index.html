@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elite Math Tutoring</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f6f9;
+}
+
+/* NAVBAR */
+nav {
+    background: #111827;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+.hero {
+    background: #2563eb;
+    color: white;
+}
+
+/* BUTTON */
+button {
+    padding: 12px 20px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* HIDE */
+.hidden {
+    display: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div><b>EliteMath</b></div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#join">Saturday</a>
+        <a href="#team">Team</a>
+        <a href="#login">Login</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h1>Math Tutoring Made Simple</h1>
+    <p>Join our Saturday live sessions</p>
+    <button onclick="showJoin()">Join Now</button>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+    <h2>Log In</h2>
+    <div class="card">
+        <input id="user" placeholder="Username"><br><br>
+        <input id="pass" type="password" placeholder="Password"><br><br>
+        <button onclick="login()">Log In</button>
+    </div>
+</section>
+
+<!-- JOIN -->
+<section id="join" class="hidden">
+    <h2>Saturday Session</h2>
+    <p>Click below to join the Zoom class</p>
+
+    <a href="https://zoom.us/j/YOUR_LINK" target="_blank">
+        <button>Join Zoom</button>
+    </a>
+
+    <br><br>
+    <button onclick="logout()">Log Out</button>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <h2>Our Team</h2>
+
+    <div class="card">
+        <h3>You</h3>
+        <p>Math Tutor</p>
+    </div>
+
+    <div class="card">
+        <h3>Partner</h3>
+        <p>Co-Tutor</p>
+    </div>
+</section>
+
+<script>
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u && p){
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("join").classList.remove("hidden");
+    } else {
+        alert("Enter info");
+    }
+}
+
+function logout(){
+    location.reload();
+}
+
+function showJoin(){
+    document.getElementById("join").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
